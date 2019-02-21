@@ -1,0 +1,12 @@
+#!/bin/bash
+sudo apt-get -y install git-core
+sudo apt -y install curl
+sudo curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+sudo apt -y install node.js
+sudo apt -y update
+sudo apt -y install openjdk-8-jdk
+sudo wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt -y update
+sudo apt -y install jenkins
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
