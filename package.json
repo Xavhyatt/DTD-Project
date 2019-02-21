@@ -20,10 +20,19 @@
     "Send",
     "Email"
   ],
-  "author": "Crypto Consulting - Charlotte HG, David J, Ben L, Conrad M, Xaviar H, Matt H, Sophia S & Lee B.",
+  "author": "Crypto Consulting - Charlotte GH, David J, Ben L, Conrad M, Xaviar H, Matt H, Sophia S & Lee B.",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Xavhyatt/DTD-Project/issues"
   },
-  "homepage": "https://github.com/Xavhyatt/DTD-Project#readme"
+  "homepage": "https://github.com/Xavhyatt/DTD-Project#readme",
+  "dependencies": {
+    "create-react-app": "^2.1.5",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.14",
+    "nodemailer": "^5.1.1",
+    "react": "^16.8.2",
+    "save": "^2.3.3"
+  }
 }

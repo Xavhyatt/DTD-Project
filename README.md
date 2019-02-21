@@ -4,4 +4,4 @@ A group project using the Scrum Framework to develop a web application that read
 
 ## Authors
 
- Crypto Consulting - Charlotte HG, David J, Ben L, Conrad M, Xaviar H, Matt H, Sophia S & Lee B.
+ Crypto Consulting - Charlotte GH, David J, Ben L, Conrad M, Xaviar H, Matt H, Sophia S & Lee B.
