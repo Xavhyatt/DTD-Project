@@ -1,0 +1,29 @@
+{
+  "name": "yellowstone",
+  "version": "1.0.0",
+  "description": "Document Threat Anaysis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xavhyatt/DTD-Project.git"
+  },
+  "keywords": [
+    "Login",
+    "OCR",
+    "PDF",
+    "Reader",
+    "Analyse",
+    "Mern",
+    "Send",
+    "Email"
+  ],
+  "author": "Crypto Consulting - Charlotte HG, David J, Ben L, Conrad M, Xaviar H, Matt H, Sophia S & Lee B.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xavhyatt/DTD-Project/issues"
+  },
+  "homepage": "https://github.com/Xavhyatt/DTD-Project#readme"
+}
