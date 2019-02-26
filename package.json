@@ -4,6 +4,7 @@
   "description": "Document Threat Anaysis",
   "main": "index.js",
   "scripts": {
+    "start":"node upload.js",
     "test": "jest"
   },
   "repository": {
