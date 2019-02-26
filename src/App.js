@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import Col from 'react-bootstrap/Col';
+import './yellowstone.css';
+import Row from 'react-bootstrap/Row';
+import Header from './header.js';
+import Keywords from "./Keywords.js";
+import Report from "./reportsection.js";
+import Upload from "./uploadfiles.js";
+ 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    
+        <div>
+     
+           <Header/>
+        
+          <Keywords/>
+           <Report/>
+          <Upload/>
+       
+          
+        
+           
+        </div>
+  )
   }
 }
 

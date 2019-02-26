@@ -1,38 +1,28 @@
 {
   "name": "yellowstone",
-  "version": "1.0.0",
-  "description": "Document Threat Anaysis",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Xavhyatt/DTD-Project.git"
-  },
-  "keywords": [
-    "Login",
-    "OCR",
-    "PDF",
-    "Reader",
-    "Analyse",
-    "Mern",
-    "Send",
-    "Email"
-  ],
-  "author": "Crypto Consulting - Charlotte GH, David J, Ben L, Conrad M, Xaviar H, Matt H, Sophia S & Lee B.",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Xavhyatt/DTD-Project/issues"
-  },
-  "homepage": "https://github.com/Xavhyatt/DTD-Project#readme",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "create-react-app": "^2.1.5",
-    "express": "^4.16.4",
-    "mongodb": "^3.1.13",
-    "mongoose": "^5.4.14",
-    "nodemailer": "^5.1.1",
-    "react": "^16.8.2",
-    "save": "^2.3.3"
-  }
+    "bootstrap": "^4.3.1",
+    "react": "^16.8.3",
+    "react-bootstrap": "^1.0.0-beta.5",
+    "react-dom": "^16.8.3",
+    "react-scripts": "2.1.5",
+    "victory": "^31.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
