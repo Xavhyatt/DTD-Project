@@ -9,6 +9,7 @@ class Upload extends Component {
 			<div id="uploadfiles">
 				<h3>Upload a PDF File here:
 				</h3>
+			<button>Select File</button>
 			<input type="text"/>
 			<button id="getwords">Upload</button>
 			

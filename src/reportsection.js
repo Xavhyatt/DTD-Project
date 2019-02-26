@@ -1,50 +1,51 @@
 import React, { Component } from "react";
 
-import {VictoryBar} from "victory";
+import {VictoryBar, VictoryChart, VictoryStack} from "victory";
+import ReportTableBody from "./reporttablebody.js";
 
-const data = [
-		{word:"dalmation", frequency: 34},
-		{word:"poodle", frequency: 22},
-		{word:"Spaniel", frequency: 4},
-	]
+const wordys = require("./scanreportmockdata.json");
+ let name = wordys.Name;
+ let wordcount = wordys.WordCount;
+ let date = wordys.ScanDateTime;
+
+
+
 
 
 class Report extends Component {
-
-
-
-
 
 	render(){
 		return(
 			<div id="report">
 
-			<h1> FILE NAME </h1>
+			<h1> {name} </h1>
 			<h2> This file is THREAT LEVEL </h2>
-			<h3> List and Frequency of words: </h3>
-			<table id="reporttable">
-			<tr>
-					<th>Threat Words </th>
-					<th>Frequency </th>
-			</tr>
-				<tr>
-					<td>Dalmation</td>
-					<td>34</td>
-			</tr>
-			<tr>
-					<td>Poodle</td>
-					<td>22</td>
-			</tr>
-			<tr>
-					<td>Spaniel</td>
-					<td>4</td>
-			</tr>
-			</table>
+			<h3> Total Word Count: {wordcount}</h3>
+			<h3> Date Scanned: {date} </h3>
+			<div>
+				<table class ="table">
+					<thead>
+					<tr>
+						<th>WORD</th>
+						<th>Frequency</th>
+					</tr>
+					</thead>
+					<ReportTableBody data ={wordys.KeywordFrequency}/>
+				</table>
+			</div>
 
+
+	
+				<VictoryChart
+				domainPadding={20}>
+				<VictoryStack
+				horizontal ={true}>
 				<VictoryBar
-					data={data}
-					x="word"
-					y="frequency"/>
+					data={wordys.KeywordFrequency}
+					x="Word"
+					y="Frequency"/>
+				</VictoryStack>
+				</VictoryChart>
 			</div>
 
 

@@ -1,0 +1,27 @@
+{
+    "Name": "ScanReport",
+    "ScanDateTime": 1428812539,
+    "WordCount": 3412,
+    "KeywordFrequency": [
+        {
+            "Word": "Pikachu",
+            "Frequency": 9
+        },
+        {
+            "Word": "Charmander",
+            "Frequency": 19
+        },
+        {
+            "Word": "Pidgey",
+            "Frequency": 2
+        },
+        {
+            "Word":"Scyther",
+            "Frequency": 13
+        },
+        {
+            "Word":"Squirtle",
+            "Frequency": 16
+        }
+    ]
+}
