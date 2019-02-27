@@ -1,15 +1,15 @@
-var express = require('express');
-var formidable = require('formidable');
-var fs = require('fs');
+let express = require('express');
+let formidable = require('formidable');
+let fs = require('fs');
 
-var app = express();
+let app = express();
 
 app.get('/', function (req, res){
     res.sendFile(__dirname + '/upload.html');
 });
 
 app.post('/', function (req, res){
-    var form = new formidable.IncomingForm();
+    let form = new formidable.IncomingForm();
     
     form.parse(req);
 
