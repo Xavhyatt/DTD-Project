@@ -23,14 +23,14 @@
 	border:solid black;
 	padding: 20px;
 	width: 40%;
-	/*margin-left: 50px;*/
+	
 	float:left;
 	
 }
 #report {
 	background-color: #FFF;
 	border:solid black;
-	padding: 20px;
+	padding: 50px;
 	width: 40%;
 	float: right;
 	margin-right:50px;

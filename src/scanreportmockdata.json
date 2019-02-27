@@ -9,7 +9,7 @@
         },
         {
             "Word": "Charmander",
-            "Frequency": 19
+            "Frequency": 34
         },
         {
             "Word": "Pidgey",
@@ -22,6 +22,11 @@
         {
             "Word":"Squirtle",
             "Frequency": 16
+        },
+        {
+            "Word":"Mew",
+            "Frequency": 14
         }
+
     ]
 }
