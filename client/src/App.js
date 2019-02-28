@@ -8,20 +8,13 @@ import Upload from "./Upload.jsx";
 class App extends Component {
   render() {
     return (
-    
-        <div>
-     
-           <Header/>
-        
-          <Keywords/>
-           <Report/>
-          <Upload/>
-       
-          
-        
-           
-        </div>
-  )
+      <div>
+        <Header/>
+        <Keywords/>
+        <Report/>
+        <Upload/>
+      </div>
+     )
   }
 }
 
