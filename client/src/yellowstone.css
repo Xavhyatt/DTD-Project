@@ -1,0 +1,48 @@
+
+
+.title{
+	  background-color: #FFCC00;
+  		padding: 20px;
+  		margin: 0;
+}
+
+
+#editwords {
+  background-color: #FFF;
+  padding: 20px;
+  border:solid black;
+  width: 40%;
+  /*margin-left: 50px;*/
+  float:left;
+
+}
+
+
+#uploadfiles{
+	background-color: #fff;
+	border:solid black;
+	padding: 20px;
+	width: 40%;
+	
+	float:left;
+	
+}
+#report {
+	background-color: #FFF;
+	border:solid black;
+	padding: 50px;
+	width: 40%;
+	float: right;
+	margin-right:50px;
+	text-align: center;
+	
+}
+
+#reporttable{
+	text-align: center;
+}
+
+#wordstextbox{
+	height:50px;
+
+}
