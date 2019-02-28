@@ -9,7 +9,7 @@ app.get("/", function(req, res) {
 });
 
 app.post("/", function(req, res) {
-  var form = new formidable.IncomingForm();
+  let form = new formidable.IncomingForm();
 
   form.parse(req);
 
