@@ -14,7 +14,12 @@
     "fs": "0.0.1-security",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "node-watch": "^0.6.0",
+    "docx-parser": "^0.2.1",
+    "mammoth": "^1.4.7",
+    "pdf-parse": "^1.1.1",
+    "node-fetch": "^2.3.0"
   },
   "main": "app.js",
   "devDependencies": {},
