@@ -22,7 +22,7 @@ class Report extends Component {
 				<h3> Total Word Count: {wordcount}</h3>
 		
 				 <div>
-			 		<table class ="table">
+			 		<table className ="table">
 			 			<thead>
 							<tr>
 			 					<th>WORD</th>
