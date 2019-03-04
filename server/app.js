@@ -5,10 +5,12 @@ let fs = require("fs");
 let app = express();
 
 let dir = __dirname + "/upload";
+
 if (!fs.existsSync(dir)) {
   console.log("Folder Created!"); 
   fs.mkdirSync(dir);
 }
+
 app.get("/", function(req, res) {
 });
 
