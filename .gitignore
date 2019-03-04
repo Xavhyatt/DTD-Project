@@ -9,6 +9,8 @@ node_modules
 /server/node_modules
 /client/node_modules
 /server/upload
+/server/convertedFiles
+/server/reports
 # testing
 /coverage
 /.sonarlint

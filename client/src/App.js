@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './yellowstone.css';
-import Header from './header.js';
-import Keywords from "./Keywords.js";
-import Report from "./Report.js";
-import Upload from "./Upload.jsx";
+import Header from './header/Header.js';
+import Keywords from "./keywords/Keywords.js";
+import Report from "./report/Report.js";
+import Upload from "./upload/Upload.jsx";
  
 class App extends Component {
   render() {
