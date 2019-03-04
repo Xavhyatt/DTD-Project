@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './Keys.css';
 
 let toTest = [];
-//let requestURL = "http://51.137.151.100:3000";
+let requestURL = "http://51.137.151.100:9123";
 
-let requestURL = "http://51.137.135.156:9123";
+//let requestURL = "http://51.137.135.156:9123";
 
 function loadJSON(){
 	let request = new XMLHttpRequest();
