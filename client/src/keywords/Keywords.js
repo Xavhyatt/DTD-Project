@@ -29,7 +29,6 @@ function deleteAll(){
 		let requestD = new XMLHttpRequest();
 		
 		requestD.open('DELETE', requestURL+'/keywords/delete/'+toTest[i].keyword, true);
-		
 		requestD.setRequestHeader('Content-Type', 'application/json');     
 		requestD.setRequestHeader('Access-Control-Allow-Origin', '*');
 		
@@ -44,6 +43,7 @@ function deleteAll(){
 function KeysTable() {
 	let KTable = document.getElementById('keysTable');
 		KTable.innerHTML = "";
+
 		KTable.innerHTML += "<tr><th class='keyEntry'>Keyword:</th> <th class='keyEntry'>Group:</th></tr>";
 	for(let i = 0; i < toTest.length; i++){
 		KTable.innerHTML += "<tr>";
