@@ -4,6 +4,11 @@ let fs = require("fs");
 
 let app = express();
 
+let dir = __dirname + "/upload";
+if (!fs.existsSync(dir)) {
+  console.log("Folder Created!"); 
+  fs.mkdirSync(dir);
+}
 app.get("/", function(req, res) {
 });
 
@@ -12,11 +17,7 @@ app.post("/", function(req, res) {
 
   form.parse(req);
 
-  let dir = __dirname + "/upload";
-  if (!fs.existsSync(dir)) {
-    console.log("Folder Created!"); 
-    fs.mkdirSync(dir);
-  }
+
 
   form.on("fileBegin", function(name, file) {
     file.path = __dirname + "/upload/" + file.name;

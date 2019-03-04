@@ -1,6 +1,6 @@
 let watch = require('node-watch');
-let folder = './upload/';
-let folder2 = './convertedFiles/';
+let folder = './upload';
+let folder2 = './convertedFiles';
 const fs = require("fs");
 if (!fs.existsSync(folder2)){
     console.log('covertedFiles Folder Created!')

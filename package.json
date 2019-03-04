@@ -7,7 +7,7 @@
     "install": "cd server && npm install && cd .. && cd client && npm install",
     "client": "cd client && npm start",
     "server": "cd server && npm run start",
-    "trial": "cd server && node ConvertToTxt.js | node scantext.js",
+    "trial": "cd server && node ConvertToTxt.js | node scantext.js | node keywords.js",
     "start": "concurrently \"npm run server\" \"npm run client\" \"npm run trial\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,9 +16,12 @@
   "license": "ISC",
   "dependencies": {
     "concurrently": "^4.1.0",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.15",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5",
-    "victory": "^31.3.0"
+    "victory": "^31.3.0",
+    "typescript": "^3.3.3333"
   }
 }

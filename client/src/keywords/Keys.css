@@ -1,0 +1,30 @@
+.keysTable {
+	border: 1px solid black;
+	margin-left: 20px;
+	margin-bottom: 15px;
+	background-color: white;
+}
+
+.keyEntry {
+	padding: 5px;
+	border: 1px solid black;
+	background-color: white;
+}
+
+.errorMessage{
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+.entryButtons {
+	margin: 10px;
+}
+
+.mainBody {	
+	background-color:gray;
+}
+
+.header {
+	margin-left: 20px;
+	margin-top: 0px;
+}
