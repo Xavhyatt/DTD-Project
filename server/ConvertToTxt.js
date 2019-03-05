@@ -62,12 +62,18 @@ function pdfToTxt(name, txtfile) {
 
 
 function xlsxToTxt(name, txtfile) {
-    var XLSX = require('xlsx')
-    var workbook = XLSX.readFile(name);
-    var sheet_name_list = workbook.SheetNames;
-    var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
-    let xlText = JSON.stringify(xlData);
-    createDocx(txtfile, xlText)
+    XLSX = require('xlsx');
+    let workbook = XLSX.readFile(name);
+    let sheet_name_list = workbook.SheetNames;
+    sheet_name_list.forEach(function(y) {
+    let worksheet = workbook.Sheets[y];
+    for (z in worksheet) {
+    if(z[0] === '!') continue;
+
+  }
+
+});
+XLSX.writeFile(workbook, txtfile);
 }
 
 
