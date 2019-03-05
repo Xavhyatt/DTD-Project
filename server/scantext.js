@@ -1,8 +1,7 @@
 var watch = require('node-watch');
 const fs = require("fs");
 const fetch = require('node-fetch');
-let buzzwordAPI = "http://51.137.151.100:3000/keywords/getall";
-
+let buzzwordAPI = "http://51.137.151.100:9123/keywords/getall";
 
 
 const request = async (data,name) => {
@@ -56,7 +55,7 @@ function scanText(text, buzzwords, name){
     
 
     buzzwords.forEach(function(element){
-    for(i=0 ; i<keys.length ; i++){
+    for(let i=0 ; i<keys.length ; i++){
         if(keys[i]===element){
             let flag = {"Word": element,
                         "Frequency" : wordcnt[element]}
@@ -78,12 +77,8 @@ function scanText(text, buzzwords, name){
   "wordCount" : wordcount, "numberOfThreatWordsFound": definite.length, "exactMatches": definite,
   "partialMatches":maybe};
   console.log(json);
-  let dir = __dirname +'/reports';
-  if (!fs.existsSync(dir)){
-      console.log('reports Folder Created!')
-      fs.mkdirSync(dir);
-  }
-  let fileloc = './reports/' + name.substring(0,name.length-4) + ".json";
+
+  let fileloc = '../client/src/results/result.json'
 
  
    fs.writeFile(fileloc, JSON.stringify(json), function (err) {

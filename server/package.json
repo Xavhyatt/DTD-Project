@@ -19,7 +19,8 @@
     "docx-parser": "^0.2.1",
     "mammoth": "^1.4.7",
     "pdf-parse": "^1.1.1",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.3.0",
+    "cors":"2.8.5"
   },
   "main": "app.js",
   "devDependencies": {},

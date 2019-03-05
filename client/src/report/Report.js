@@ -3,10 +3,10 @@ import React, { Component } from "react";
 import {VictoryBar, VictoryChart, VictoryStack} from "victory";
 import ReportTableBody from "./reporttablebody.js";
 
-const wordys = require("./testytest.json");
- let name = wordys.NameofFile;
- let wordcount = wordys.wordcount;
- console.log(name);
+const wordys = require("../results/result.json");
+ let name = wordys.nameOfFile;
+ let wordcount = wordys.wordCount;
+ console.log(wordys);
 
 
 
@@ -29,7 +29,7 @@ class Report extends Component {
 			 					<th>Frequency</th>
 			 				</tr>
 			 			</thead>
-			 			<ReportTableBody data ={wordys.Exactmatches}/>
+			 			<ReportTableBody data ={wordys.exactMatches}/>
 			 		</table>
 				 </div>
 
@@ -40,7 +40,7 @@ class Report extends Component {
 					<VictoryStack
 			 		horizontal ={true}>
 			 		<VictoryBar
-			 			data={wordys.Exactmatches}
+			 			data={wordys.exactMatches}
 			 			x="Word"
 			 			y="Frequency"/> 
 			 		</VictoryStack>
