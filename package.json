@@ -7,8 +7,8 @@
     "install": "cd server && npm install && cd .. && cd client && npm install",
     "client": "cd client && npm start",
     "server": "cd server && npm run start",
-    "trial": "cd server && node scantext.js | node ConvertToTxt.js | node keywords.js",
-    "start": "concurrently \" npm run server\" \" npm run client\" \" npm run trial\" ",
+    "nodescript": "cd server && node scantext.js | node ConvertToTxt.js | node keywords.js",
+    "start": "concurrently \" npm run server\" \" npm run client\" \" npm run nodescript\" ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
