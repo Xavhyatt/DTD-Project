@@ -78,12 +78,12 @@ function scanText(text, buzzwords, name){
   "wordCount" : wordcount, "numberOfThreatWordsFound": definite.length, "exactMatches": definite,
   "partialMatches":maybe};
   console.log(json);
-  let dir = __dirname +'/reports';
+  let dir = "../" + _dirname +'/client/src/results';
   if (!fs.existsSync(dir)){
       console.log('reports Folder Created!')
       fs.mkdirSync(dir);
   }
-  let fileloc = './reports/' + name.substring(0,name.length-4) + ".json";
+  let fileloc = '../client/src/results/' + name.substring(0,name.length-4) + ".json";
 
  
    fs.writeFile(fileloc, JSON.stringify(json), function (err) {
