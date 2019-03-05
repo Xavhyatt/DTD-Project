@@ -20,3 +20,10 @@ test('Assigns High threat level from percentage above higher bound', () => {
     let percentage = 10;
     expect(assignThreatLevel(boundOne, boundTwo, percentage)).toBe("High");
 });
+
+test('Bounds are the same', () => {
+    let boundOne = 6;
+    let boundTwo = 6;
+    let percentage = 10;
+    expect(assignThreatLevel(boundOne, boundTwo, percentage)).toBe("High");
+});
