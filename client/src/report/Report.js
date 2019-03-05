@@ -4,8 +4,8 @@ import {VictoryBar, VictoryChart, VictoryStack} from "victory";
 import ReportTableBody from "./reporttablebody.js";
 
 const wordys = require("../results/result.json");
- let name = wordys.NameofFile;
- let wordcount = wordys.wordcount;
+ let name = wordys.nameOfFile;
+ let wordcount = wordys.wordCount;
  console.log(name);
 
 
@@ -40,7 +40,7 @@ class Report extends Component {
 					<VictoryStack
 			 		horizontal ={true}>
 			 		<VictoryBar
-			 			data={wordys.Exactmatches}
+			 			data={wordys.exactMatches}
 			 			x="Word"
 			 			y="Frequency"/> 
 			 		</VictoryStack>
