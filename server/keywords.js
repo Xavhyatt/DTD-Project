@@ -3,8 +3,10 @@ const bodyParser = require('body-parser');
 const keyword = require('./routes/keyword.route');
 const mongoose = require('mongoose');
 const http = require('http');
+const cors = require('cors');
 
 let app = express();
+app.use(cors());
 
 http.createServer(app).listen(9123);
 
