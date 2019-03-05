@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import {VictoryBar, VictoryChart, VictoryStack} from "victory";
 import ReportTableBody from "./reporttablebody.js";
 
-const wordys = require("./testytest.json");
+const wordys = require("../results/result.json");
  let name = wordys.NameofFile;
  let wordcount = wordys.wordcount;
  console.log(name);

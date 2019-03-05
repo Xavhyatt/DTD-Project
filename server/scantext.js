@@ -79,7 +79,7 @@ function scanText(text, buzzwords, name){
   "partialMatches":maybe};
   console.log(json);
 
-  let fileloc = '../client/src/results/' + name.substring(0,name.length-4) + ".json";
+  let fileloc = '../client/src/results/result.json' //+ name.substring(0,name.length-4) + ".json";
 
  
    fs.writeFile(fileloc, JSON.stringify(json), function (err) {
