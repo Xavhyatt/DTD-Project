@@ -15,6 +15,15 @@ exports.report_create = function (req, res) {
     })
 }
 
+exports.report_getById = function (req, res) {
+    Report.findById(req.parameters.id, (err, report) => {
+        if (err) return (err);
+        else {
+            res.json(report);
+        }
+    });
+}
+
 exports.report_getall = function (req, res) {
     Report.find().
         exec(function (err, reports) {
