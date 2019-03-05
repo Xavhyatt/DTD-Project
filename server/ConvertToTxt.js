@@ -1,4 +1,5 @@
 let watch = require('node-watch');
+let pfdToTxt = require('./convertpdf');
 let folder = './upload/';
 let folder2 = './convertedFiles/';
 const fs = require("fs");
@@ -23,20 +24,6 @@ watch(folder, { recursive: true }, function (evt, name) {
     }
 });
 
-function pfdToTxt(name, txtfile) {
-    const fs = require("fs");
-    const pdf = require('pdf-parse');
-
-    let dataBuffer = fs.readFileSync(name);
-
-    pdf(dataBuffer).then(function (data) {
-
-        fs.writeFile(txtfile, data.text, function (err) {
-            if (err) throw err;
-            console.log("PDF Converted !");
-        })
-    });
-}
 
 
 

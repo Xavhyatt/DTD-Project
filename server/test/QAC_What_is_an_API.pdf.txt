@@ -1,0 +1,47 @@
+
+
+Training One Pager
+What is an API? 
+APPLICATION PROGRAMMING INTERFACE
+“A set of functions and procedures that allow the creation of applications which 
+access the features or data of an operating system, application, or other service.”
+Think of an API as a waiter, you have a menu with stuff you can ask for, then the 
+waiter takes that and returns what you asked for. Similarly an API accepts data 
+and does stuff with that data, whether that be to return other data, or delete date, 
+update data... anything really.
+One of the most popular type of APIs is something called REST APIs.
+REPRESENTATIONAL STATE TRANSFER
+This is a web service that provides interoperability between computer systems on 
+the internet.
+These services allow systems to access and manipulate textual representations of 
+web resources using a uniform and pre-defined set of stateless operations.
+There are others such as WSDL and SOAP but REST has been very successful and 
+popular for a long time now.
+QA Consulting - Training materials
+
+Training One Pager
+WHAT’S GOOD ABOUT THEM?
+Similar to good programming concepts, we want to reuse things where possible, 
+by separating our data/logic into an API, multiple things can use the API and build 
+things from it, allowing the same company to use their API and build things such 
+as a web app, phone app, desktop app, all using the same API, or even making the 
+API public and letting the community create what they want! 
+WHAT ARE THEY USED FOR?
+Everything really, any data you want to work with can be exposed via an API, 
+providing functionality or just simply data lookup.
+HOW DO WE MAKE THEM?
+Lots of languages have the ability to make APIS, Node (The backend part of 
+JavaScript) has a framework called Express which is generally used for it.
+HOW DO WE USE THEM?
+Web requests! Your browser has the ability to make GET requests simply by 
+loading up the URL, however to make the other requests such as post or delete we 
+generally use a program to do it, or code it!
+EXAMPLE PUBLIC APIS
+• https://developers.soundcloud.com/docs/api/guide
+• http://deckofcardsapi.com/
+• https://darksky.net/dev/
+• http://products.wolframalpha.com/api/
+• http://developer.marvel.com/
+• https://github.com/toddmotto/public-apis
+• https://www.programmableweb.com/apis
+QA Consulting - Training materials
