@@ -6,7 +6,7 @@ import ReportTableBody from "./reporttablebody.js";
 const wordys = require("../results/result.json");
  let name = wordys.nameOfFile;
  let wordcount = wordys.wordCount;
- console.log(name);
+ console.log(wordys);
 
 
 
@@ -29,7 +29,7 @@ class Report extends Component {
 			 					<th>Frequency</th>
 			 				</tr>
 			 			</thead>
-			 			<ReportTableBody data ={wordys.Exactmatches}/>
+			 			<ReportTableBody data ={wordys.exactMatches}/>
 			 		</table>
 				 </div>
 
