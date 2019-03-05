@@ -78,11 +78,7 @@ function scanText(text, buzzwords, name){
   "wordCount" : wordcount, "numberOfThreatWordsFound": definite.length, "exactMatches": definite,
   "partialMatches":maybe};
   console.log(json);
-  let dir = "../" + _dirname +'/client/src/results';
-  if (!fs.existsSync(dir)){
-      console.log('reports Folder Created!')
-      fs.mkdirSync(dir);
-  }
+
   let fileloc = '../client/src/results/' + name.substring(0,name.length-4) + ".json";
 
  
