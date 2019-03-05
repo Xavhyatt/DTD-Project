@@ -1,9 +1,9 @@
 var watch = require('node-watch');
 const fs = require("fs");
 const fetch = require('node-fetch');
-let buzzwordAPI = "http://51.137.151.100:3000/keywords/getall";
+let buzzwordAPI = "http://51.137.151.100:9123/keywords/getall";
 
-
+console.log('here');
 
 const request = async (data,name) => {
     fetch(buzzwordAPI)
