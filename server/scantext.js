@@ -3,7 +3,6 @@ const fs = require("fs");
 const fetch = require('node-fetch');
 let buzzwordAPI = "http://51.137.151.100:9123/keywords/getall";
 
-console.log('here');
 
 const request = async (data,name) => {
     fetch(buzzwordAPI)
@@ -79,7 +78,7 @@ function scanText(text, buzzwords, name){
   "partialMatches":maybe};
   console.log(json);
 
-  let fileloc = '../client/src/results/result.json' //+ name.substring(0,name.length-4) + ".json";
+  let fileloc = '../client/src/results/result.json'
 
  
    fs.writeFile(fileloc, JSON.stringify(json), function (err) {
