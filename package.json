@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "cd server && sudo npm install && cd .. && cd client && sudo npm install",
+    "install": "cd server && npm install && cd .. && cd client && npm install",
     "client": "cd client && sudo npm start",
     "server": "cd server && sudo npm run start",
     "trial": "cd server && sudo node scantext.js | sudo node ConvertToTxt.js | sudo node keywords.js",
-    "start": "concurrently \"sudo npm run server\" \"sudo npm run client\" \"sudo npm run trial\" ",
+    "start": "concurrently \" npm run server\" \" npm run client\" \"sudo npm run trial\" ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
