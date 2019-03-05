@@ -8,4 +8,6 @@ router.get('/getall', keyword_controller.keyword_getall);
 
 router.delete('/delete/:keyword', keyword_controller.keyword_delete);
 
+router.delete('/deleteByGroup/:group', keyword_controller.keyword_deleteByGroup);
+
 module.exports = router;
