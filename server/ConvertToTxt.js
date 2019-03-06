@@ -69,5 +69,5 @@ function createDocx(txtfile,text){
     packer.toBuffer(doc).then((buffer) => {
     fs.writeFileSync((txtfile.substring(0,txtfile.length-4)+".docx"), buffer)
     })
-};
+}
 
