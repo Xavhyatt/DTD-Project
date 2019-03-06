@@ -3,7 +3,7 @@ import './Keys.css';
 
 let groups = [];
 let keywords = [];
-let requestURL = "http://51.137.151.100:9123";
+let requestURL = "http://localhost:9123";
 
 //let requestURL = "http://51.137.135.156:9123";
 
