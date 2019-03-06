@@ -67,7 +67,7 @@ exports.keyword_getall = function(req, res) {
 		exec(function(err, keywords){
 			if(err) return (err);
 			for(word in keywords){
-				keys.push(keywords[word]);
+				keys.push(keywords[word].keyword);
 			}
 			res.send(keys);
 		});
