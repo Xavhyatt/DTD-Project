@@ -9,7 +9,7 @@ let requestURL = "http://51.137.151.100:9123";
 function loadJSON(){
 	let request = new XMLHttpRequest();
 	
-	request.open('GET', requestURL+'/keywords/getall', true);
+	request.open('GET', requestURL+'/keywords/getallkeys', true);
 	
 	request.responseType = 'json';
 	
