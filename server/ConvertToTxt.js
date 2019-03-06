@@ -26,28 +26,12 @@ watch(folder, { recursive: true }, function (evt, name) {
         }
 
         if (name.endsWith(".docx")) {
-            docxToText(name, txtfile);
+            createDocx(txtfile, name)
             fs.unlinkSync(name);
         }
 
     }
 });
-
-function docxToText(name,txtfile) {
-    const fs = require("fs");
-    var mammoth = require("mammoth");
-
-    mammoth.convertToHtml({ path: name })
-        .then(function (result) {
-            let html = result.value;
-            let messages = result.messages;
-            fs.writeFile(txtfile, html, function (err) {
-                if (err) throw err;
-                console.log("Docx Converted");
-            })
-        })
-        .done();
-}
 
 function pdfToTxt(name, txtfile) {
     const fs = require("fs");
