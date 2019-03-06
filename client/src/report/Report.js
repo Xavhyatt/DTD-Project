@@ -6,6 +6,8 @@ import ReportTableBody from "./reporttablebody.js";
 const wordys = require("../results/result.json");
  let name = wordys.nameOfFile;
  let wordcount = wordys.wordCount;
+ let threatLevel = wordys.threatLevel;
+ let numberOfThreatWordsFound = wordys.numberOfThreatWordsFound;
  console.log(wordys);
 
 
@@ -18,8 +20,10 @@ class Report extends Component {
 		return(
 			<div id="report">
 				<h1> {name} </h1>
-				<h2> This file is THREAT LEVEL </h2>
+				<h2> Threat Level: {threatLevel} </h2>
+				<h3> Threat Word Count: {numberOfThreatWordsFound}</h3>
 				<h3> Total Word Count: {wordcount}</h3>
+
 		
 				 <div>
 			 		<table className ="table">
