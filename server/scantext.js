@@ -89,7 +89,7 @@ function scanText(text, buzzwords, name){
    fs.writeFile(fileloc, JSON.stringify(json), function (err) {
     if (err) throw err;
     console.log("json created");
+    let deleteconverted = './convertedFiles/' + name + "docx"; 
+    fs.unlinkSync(deleteconverted);
 })
 }
-
-
