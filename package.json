@@ -7,21 +7,23 @@
     "install": "cd server && npm install && cd .. && cd client && npm install",
     "client": "cd client && npm start",
     "server": "cd server && npm run start",
-    "trial": "cd server && node ConvertToTxt.js | node scantext.js",
-    "start": "concurrently \"npm run server\" \"npm run client\" \"npm run trial\"",
-    "test": "jest"
+    "nodescript": "cd server && node scantext.js | node ConvertToTxt.js | node keywords.js",
+    "start": "concurrently \" npm run server\" \" npm run client\" \" npm run nodescript\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^4.1.0",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.15",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5",
-    "victory": "^31.3.0"
-  },
-  "devDependencies": {
-    "jest": "^24.1.0"
+    "victory": "^31.3.0",
+    "typescript": "^3.3.3333",
+    "node-watch": "^0.6.0",
+    "cors":"2.8.5"
   }
 }

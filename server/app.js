@@ -4,6 +4,13 @@ let fs = require("fs");
 
 let app = express();
 
+let dir = __dirname + "/upload";
+
+if (!fs.existsSync(dir)) {
+  console.log("Folder Created!"); 
+  fs.mkdirSync(dir);
+}
+
 app.get("/", function(req, res) {
 });
 
@@ -11,12 +18,6 @@ app.post("/", function(req, res) {
   let form = new formidable.IncomingForm();
 
   form.parse(req);
-
-  let dir = __dirname + "/upload";
-  if (!fs.existsSync(dir)) {
-    console.log("Folder Created!"); 
-    fs.mkdirSync(dir);
-  }
 
   form.on("fileBegin", function(name, file) {
     file.path = __dirname + "/upload/" + file.name;
@@ -29,8 +30,6 @@ app.post("/", function(req, res) {
     console.log("***All Files Downloaded***");
     res.sendFile(__dirname + "/Uploaded.html");
 
-
- 
   });
 });
 
