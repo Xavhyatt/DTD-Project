@@ -10,7 +10,7 @@ watch(folder, { recursive: true }, function (evt, name) {
     console.log('%s changed.', name);
     let filename = name.substring(folder.length-2);
    
-    let txtfile = folder2 + filename + ".txt";
+    let txtfile = folder2 + filename.replace("." ,"");
     const fs = require("fs");
     if (evt == 'update') {
   
@@ -70,3 +70,4 @@ function createDocx(txtfile,text){
     fs.writeFileSync((txtfile.substring(0,txtfile.length-4)+".docx"), buffer)
     })
 };
+
