@@ -3,9 +3,9 @@ import './Keys.css';
 
 let groups = [];
 let keywords = [];
-//let requestURL = "http://51.137.151.100:3000";
+let requestURL = "http://51.137.151.100:3000";
 
-let requestURL = "http://51.137.135.156:9123";
+//let requestURL = "http://51.137.135.156:9123";
 
 function loadGroups(){
 	let request = new XMLHttpRequest();
