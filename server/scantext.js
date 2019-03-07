@@ -108,7 +108,7 @@ function scanText(text, buzzwords, name){
       fs.mkdirSync(dir);
   }
   let fileloc = './reports/' + name.substring(0,name.length-1) + ".json";
-  let resultsLoc = '../client/src/results/results.json;
+  let resultsLoc = '../client/src/results/results.json';
 
    fs.writeFile(fileloc, JSON.stringify(json), function (err) {
     if (err) throw err;
