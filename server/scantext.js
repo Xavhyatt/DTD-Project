@@ -4,6 +4,8 @@ const fetch = require('node-fetch');
 let ConvertToTxt = require("./ConvertToTxt.js");
 let buzzwordAPI = "http://51.137.151.100:9123/keywords/getall";
 
+let PostURL = "http://51.137.151.100:9123/report/create";
+
 let totalFrequency = require("./threatLevel/TotalFrequency");
 let assignThreatLevel = require("./threatLevel/AssignThreatLevel");
 let calculatePercentage = require("./threatLevel/CalculatePercentage")
@@ -93,6 +95,21 @@ function scanText(text, buzzwords, name){
     };
     console.log(json);
 
+    let reportRequest = new XMLHttpRequest();
+		
+	reportRequest.open('POST', PostURL, true);
+		
+	reportRequest.setRequestHeader('Content-Type', 'application/json');   
+		
+	reportRequest.responseType = 'json';
+		
+	reportRequest.send(JSON.stringify(json));
+
+	reportRequest.onload = function(){
+		console.log("Report Created");
+	}
+    
+    
   let json = {"nameOfFile" : name,
   "wordCount" : wordcount, "numberOfThreatWordsFound": definite.length, "exactMatches": definite,
   "partialMatches":maybe};
