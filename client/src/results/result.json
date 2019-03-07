@@ -1,1 +1,17 @@
-{"nameOfFile":"QAC_What_is_an_API.pdf","threatLevel":"Medium","wordCount":341,"numberOfThreatWordsFound":10,"exactMatches":[{"Word":"and","Frequency":10}],"partialMatches":[{"Word":"and","Frequency":10}]}
+
+{
+  "nameOfFile": "sample.pdf",
+  "wordCount": 194,
+  "numberOfThreatWordsFound": 2,
+  "exactMatches": [
+    { "Word": "and", "Frequency": 38 },
+    { "Word": "the", "Frequency": 2 }
+  ],
+  "partialMatches": [
+    { "Word": "and", "Frequency": 38 },
+    { "Word": "the", "Frequency": 2 },
+    { "Word": "this", "Frequency": 2 },
+    { "Word": "watching", "Frequency": 1 }
+  ]
+}
+

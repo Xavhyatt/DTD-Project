@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Keys.css';
+import {ButtonGroup, Button, Input} from "reactstrap";
 
 let groups = [];
 let keywords = [];
@@ -97,10 +98,11 @@ class Groups extends Component {
 			</table>
 			
 			<div className="entryButtons">
-				<div>Group: <input className="entryButtons" id="group"></input></div>
-				
-				<button className="entryButtons" type="submit" onClick={() => this.addGroup()}> Add Group </button>
-				<button className="entryButtons" type="submit" onClick={() => this.delGroup()}> Remove Group </button>
+				<div>Group: <Input className="entryButtons" id="group"></Input></div>
+				<ButtonGroup>
+				<Button className="entryButtons" type="submit" onClick={() => this.addGroup()}> Add Group </Button>
+				<Button className="entryButtons" type="submit" onClick={() => this.delGroup()}> Remove Group </Button>
+				</ButtonGroup>
 			</div>
 			<div id="errormessage" className="errorMessage"></div>
 		</div>

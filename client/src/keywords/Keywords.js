@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Keys.css';
-
+import {Button, ButtonGroup, Input} from "reactstrap";
 let toTest = [];
 let requestURL = "http://51.137.151.100:9123";
 
@@ -100,21 +100,20 @@ class Keyword extends Component {
 	render() {
 	loadJSON();
     return (
-		<div className="mainBody">
-			<h1 className="header"> Blacklist: </h1>
-			<div><select className="entryButtons" id="viewingDropdown"><option value="All">All</option></select><button className="entryButtons" type="submit" onClick={() => KeysTable()}> Load </button></div>
+		<div>
+			<div><select className="entryButtons" id="viewingDropdown"><option value="All">All</option></select><Button  variant="primary" className="entryButtons" type="submit" onClick={() => KeysTable()}> Load </Button></div>
 			<table id="keysTable" className="keysTable">
 			</table>
 			
 			<div className="entryButtons">
-				Keyword: <input className="entryButtons" id="keyInput"></input>
-				
-				<button className="entryButtons" type="submit" onClick={() => this.addKey()}> Add Keyword </button>
-				<button className="entryButtons" type="submit" onClick={() => this.delKey()}> Remove Keyword </button>
-				<button className="entryButtons" type="submit" onClick={() => deleteAll()}> Delete All </button>
-				
-				<div>Group: <select className="entryButtons" id="groupsDropdown"><option value="All">All</option></select></div>
-				<div>Score: <input className="entryButtons" id="keyScore"></input></div>
+			<div>Group: <select className="entryButtons" id="groupsDropdown"><option value="All">All</option></select></div>
+				Keyword: <Input className="entryButtons" id="keyInput"></Input>
+				<div>Score: <Input className="entryButtons" id="keyScore"></Input></div>
+				<ButtonGroup>
+				<Button variant="primary" className="entryButtons" type="submit" onClick={() => this.addKey()}> Add Keyword </Button>
+				<Button variant="primary" className="entryButtons" type="submit" onClick={() => this.delKey()}> Remove Keyword </Button>
+				<Button variant="primary" className="entryButtons" type="submit" onClick={() => deleteAll()}> Delete All </Button>
+				</ButtonGroup>
 			</div>
 			<div id="errormessage" className="errorMessage"></div>
 		</div>
