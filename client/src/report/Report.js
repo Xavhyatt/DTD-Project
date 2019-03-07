@@ -3,10 +3,12 @@ import React, { Component } from "react";
 import { VictoryBar, VictoryChart, VictoryStack } from "victory";
 import ReportTableBody from "./reporttablebody.js";
 
-const results = require("../results/result.json");
-let name = results.nameOfFile;
-let wordcount = results.wordCount;
-console.log(results);
+const wordys = require("../results/result.json");
+ let name = wordys.nameOfFile;
+ let wordcount = wordys.wordCount;
+ let threatLevel = wordys.threatLevel;
+ let numberOfThreatWordsFound = wordys.numberOfThreatWordsFound;
+ console.log(wordys);
 
 
 
@@ -18,12 +20,12 @@ class Report extends Component {
 		super();
 
 		this.state = {
-			filteredWords: results.exactMatches
+			filteredWords: wordys.exactMatches
 		}
 
 		this.filterGroup = () => {
 			this.setState({
-				filteredWords: results.exactMatches.filter((word) =>
+				filteredWords: wordys.exactMatches.filter((word) =>
 					word.Word.toLowerCase().includes(document.getElementById("wordSearch").value.toLowerCase()))
 			});
 		}
@@ -37,7 +39,8 @@ class Report extends Component {
 			<div id="report">
 				<input className="form-control mr-sm-2" id="wordSearch" type="search" placeholder="Search" onChange={this.filterGroup}></input>
 				<h1> {name} </h1>
-				<h2> This file is THREAT LEVEL </h2>
+				<h2> Threat Level: {threatLevel} </h2>
+				<h3> Threat Word Count: {numberOfThreatWordsFound}</h3>
 				<h3> Total Word Count: {wordcount}</h3>
 
 				<div>

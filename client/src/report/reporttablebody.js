@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 class ReportTableBody extends Component{
 	render(){
-		let output = this.props.data.map((results) => {
+		let output = this.props.data.map((wordys) => {
 			return(
 				<tr key = {results.Word} >
 					<td>{results.Word}</td>
