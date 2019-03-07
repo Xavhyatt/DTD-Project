@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Keys.css';
 
-let toTest = [];
+var toTest = [];
 let requestURL = "http://51.137.151.100:9123";
 
 //let requestURL = "http://51.137.135.156:9123";
