@@ -17,17 +17,14 @@ watch(folder, { recursive: true }, function (evt, name) {
 
         if (name.endsWith(".pdf")) {
             pdfToTxt(name, txtfile);
-            fs.unlinkSync(name);
         }
 
         if (name.endsWith(".xlsx")) {
             xlsxToTxt(name, txtfile);
-            fs.unlinkSync(name);
         }
 
         if (name.endsWith(".docx")) {
             createDocx(txtfile, name)
-            fs.unlinkSync(name);
         }
 
     }
@@ -41,6 +38,7 @@ function pdfToTxt(name, txtfile) {
 
     pdf(dataBuffer).then(function (data) {
         createDocx(txtfile,data.text);
+        fs.unlinkSync(name);
     });
 }
 
@@ -51,7 +49,8 @@ function xlsxToTxt(name, txtfile) {
     let sheet_name_list = workbook.SheetNames;
     let xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
     let xlText = JSON.stringify(xlData);
-    createDocx(txtfile, xlText)
+    createDocx(txtfile, xlText);
+    fs.unlinkSync(name);
     }
 
 
@@ -74,6 +73,7 @@ function createDocx(txtfile,text){
             fs.writeFileSync((txtfile.substring(0,txtfile.length-5)+".docx"), buffer)   
         }    
 })
+    fs.unlinkSync(name);
 }
 
 module.exports = {createDocx}
