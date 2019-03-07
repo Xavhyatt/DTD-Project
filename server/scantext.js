@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 let ConvertToTxt = require("./ConvertToTxt.js");
 let buzzwordAPI = "http://51.137.151.100:9123/keywords/getall";
 
-let PostURL = "http://51.137.151.100:9123/report/create";
+let PostURL = "http://51.137.151.100:9123/reports/create";
 
 let totalFrequency = require("./threatLevel/TotalFrequency");
 let assignThreatLevel = require("./threatLevel/AssignThreatLevel");
