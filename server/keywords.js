@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const report = require('./routes/report.route');
 const keyword = require('./routes/keyword.route');
 const group = require('./routes/group.route');
 const mongoose = require('mongoose');
@@ -22,6 +23,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
+app.use('/reports', report)
 app.use('/keywords', keyword);
 app.use('/groups', group);
 

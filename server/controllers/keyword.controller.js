@@ -67,11 +67,24 @@ exports.keyword_getall = function(req, res) {
 		exec(function(err, keywords){
 			if(err) return (err);
 			for(word in keywords){
+				keys.push(keywords[word].keyword);
+			}
+			res.send(keys);
+		});
+};
+
+exports.keyword_getallkeys = function(req, res) {
+	var keys = [];
+	Keyword.find().
+		exec(function(err, keywords){
+			if(err) return (err);
+			for(word in keywords){
 				keys.push(keywords[word]);
 			}
 			res.send(keys);
 		});
 };
+
 
 exports.keyword_delete = function(req, res) {
 	Keyword.find().where("keyword", req.params.keyword).
