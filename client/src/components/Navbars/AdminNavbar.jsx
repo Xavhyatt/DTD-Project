@@ -48,7 +48,7 @@ class AdminNavbar extends React.Component {
     }
   };
   // this function opens and closes the collapse on small devices
-  
+
   toggleModalSearch = () => {
     this.setState({
       modalSearch: !this.state.modalSearch
@@ -82,25 +82,9 @@ class AdminNavbar extends React.Component {
                 {this.props.brandText}
               </NavbarBrand>
             </div>
-            <button
-              aria-expanded={false}
-              aria-label="Toggle navigation"
-              className="navbar-toggler"
-              data-target="#navigation"
-              data-toggle="collapse"
-              id="navigation"
-              type="button"
-              onClick={this.toggleCollapse}
-            >
-              <span className="navbar-toggler-bar navbar-kebab" />
-              <span className="navbar-toggler-bar navbar-kebab" />
-              <span className="navbar-toggler-bar navbar-kebab" />
-            </button>
+
             <Collapse navbar isOpen={this.state.collapseOpen}>
-              <Nav className="ml-auto" navbar>
-            
-                
-              </Nav>
+              <Nav className="ml-auto" navbar />
             </Collapse>
           </Container>
         </Navbar>

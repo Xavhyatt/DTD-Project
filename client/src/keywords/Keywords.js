@@ -106,14 +106,14 @@ class Keyword extends Component {
 			</table>
 			
 			<div className="entryButtons">
+			<div>Group: <select className="entryButtons" id="groupsDropdown"><option value="All">All</option></select></div>
 				Keyword: <Input className="entryButtons" id="keyInput"></Input>
+				<div>Score: <Input className="entryButtons" id="keyScore"></Input></div>
 				<ButtonGroup>
 				<Button variant="primary" className="entryButtons" type="submit" onClick={() => this.addKey()}> Add Keyword </Button>
 				<Button variant="primary" className="entryButtons" type="submit" onClick={() => this.delKey()}> Remove Keyword </Button>
 				<Button variant="primary" className="entryButtons" type="submit" onClick={() => deleteAll()}> Delete All </Button>
 				</ButtonGroup>
-				<div>Group: <select className="entryButtons" id="groupsDropdown"><option value="All">All</option></select></div>
-				<div>Score: <Input className="entryButtons" id="keyScore"></Input></div>
 			</div>
 			<div id="errormessage" className="errorMessage"></div>
 		</div>
