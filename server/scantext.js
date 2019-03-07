@@ -2,9 +2,9 @@ let watch = require('node-watch');
 const fs = require("fs");
 const fetch = require('node-fetch');
 let ConvertToTxt = require("./ConvertToTxt.js");
-let buzzwordAPI = "http://51.137.135.156:9123/keywords/getall";
+let buzzwordAPI = "http://51.137.151.100:9123/keywords/getall";
 
-let PostURL = "http://51.137.135.156:9123/report/create";
+let PostURL = "http://51.137.151.100:9123/report/create";
 
 let totalFrequency = require("./threatLevel/TotalFrequency");
 let assignThreatLevel = require("./threatLevel/AssignThreatLevel");
