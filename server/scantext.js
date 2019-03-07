@@ -94,21 +94,6 @@ function scanText(text, buzzwords, name){
         "exactMatches": definite, "partialMatches": maybe
     };
     console.log(json);
-
-    let reportRequest = new XMLHttpRequest();
-		
-	reportRequest.open('POST', PostURL, true);
-		
-	reportRequest.setRequestHeader('Content-Type', 'application/json');   
-		
-	reportRequest.responseType = 'json';
-		
-	reportRequest.send(JSON.stringify(json));
-
-	reportRequest.onload = function(){
-		console.log("Report Created");
-	}
-    
     
   let json = {"nameOfFile" : name,
   "wordCount" : wordcount, "numberOfThreatWordsFound": definite.length, "exactMatches": definite,
@@ -135,4 +120,19 @@ ConvertToTxt.createDocx(fileloc , JSON.stringify(json));
         if (err) throw err;
         console.log("json created");
     })
+	
+	let reportRequest = new XMLHttpRequest();
+		
+	reportRequest.open('POST', PostURL, true);
+		
+	reportRequest.setRequestHeader('Content-Type', 'application/json');   
+		
+	reportRequest.responseType = 'json';
+		
+	reportRequest.send(JSON.stringify(json));
+
+	reportRequest.onload = function(){
+		console.log("Report Created");
+	}
+    
 }
