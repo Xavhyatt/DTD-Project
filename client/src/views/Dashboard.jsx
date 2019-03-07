@@ -2,7 +2,6 @@ import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // react plugin used to create charts
-import { Line, Bar } from "react-chartjs-2";
 import Report from "../report/Report.js";
 import Upload from "../upload/Uploads.jsx";
 
@@ -28,12 +27,7 @@ import {
 } from "reactstrap";
 
 // core components
-import {
-  chartExample1,
-  chartExample2,
-  chartExample3,
-  chartExample4
-} from "../variables/charts.jsx";
+
 
 class Dashboard extends React.Component {
   constructor(props) {
