@@ -1,0 +1,33 @@
+.fileform {
+  position: relative;
+  overflow: hidden;
+}
+input[type="file"]::-webkit-file-upload-button {
+  background-size: 210% 210%;
+  background-position: top right;
+  background-color: #344675;
+  -webkit-appearance: button;
+  border-width: 2px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  margin: 4px 1px;
+  border-radius: 0.4285rem;
+  background: #344675;
+  background-image: linear-gradient(to bottom left, #344675, #263148, #344675);
+  transition: all 0.15s ease;
+  box-shadow: none;
+  color: #ffffff;
+  display: inline-block;
+  padding: 11px 40px;
+  font-size: 0.875rem;
+  line-height: 1.35em;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-family: "Poppins", sans-serif;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+}
