@@ -16,14 +16,17 @@
   "license": "ISC",
   "dependencies": {
     "concurrently": "^4.1.0",
+    "cors": "2.8.5",
+    "docx": "4.7.1",
     "mongodb": "^3.1.13",
     "mongoose": "^5.4.15",
+    "node-watch": "^0.6.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5",
-    "victory": "^31.3.0",
     "typescript": "^3.3.3333",
-    "node-watch": "^0.6.0",
-    "cors": "2.8.5"
+    "victory": "^31.3.0",
+    "xmlhttprequest": "^1.8.0",
+    "xlsx": "^0.14.1"
   }
 }
