@@ -122,14 +122,19 @@ ConvertToTxt.createDocx(fileloc , JSON.stringify(json));
     })
 	
 	let reportRequest = new XMLHttpRequest();
-		
+		let jsonReport = {"nameOfFile" : name,
+ 		"wordCount" : wordcount,
+		"numberOfThreatWordsFound": definite.length, 
+		"exactMatches": definite,
+ 		"partialMatches":maybe
+	};
 	reportRequest.open('POST', PostURL, true);
 		
 	reportRequest.setRequestHeader('Content-Type', 'application/json');   
 		
 	reportRequest.responseType = 'json';
 		
-	reportRequest.send(JSON.stringify(json));
+	reportRequest.send(JSON.stringify(jsonReport));
 
 	reportRequest.onload = function(){
 		console.log("Report Created");
