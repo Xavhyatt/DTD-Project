@@ -1,0 +1,236 @@
+
+
+ 
+ 
+ 
+ 
+
+ 
+    
+ 
+ 
+  
+ 
+Thursday, 21 May 2015
+ 
+| 1
+ 
+ 
+  
+ 
+QA Consulting. 
+Unit Testing 
+WITH SPRING BOOT 
+
+ 
+    
+ 
+ 
+  
+ 
+Thursday, 21 May 2015
+ 
+| 2
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Prepared by 
+Dale Carr 
++447534789613 
+dale.carr@qa.com 
+ 
+ 
+
+ 
+ 
+ 
+Contents 
+Heading 1 style ..................................................... Error! Bookmark not defined. 
+Heading 2 style ........................................................................ Error! Bookmark not defined. 
+Heading 3 style .................................................................................................... Error! Bookmark not defined. 
+List style for numbered lists .............................................................................. Error! Bookmark not defined. 
+Tables ..................................................................... Error! Bookmark not defined. 
+How the footer works ......................................... Error! Bookmark not defined. 
+Another heading ..................................................................... Error! Bookmark not defined. 
+Inserting images ................................................... Error! Bookmark not defined. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+    
+ 
+ 
+  
+ 
+Thursday, 21 May 2015
+ 
+| 1
+ 
+Adding tests to our database program 
+Using the sample database app provided as a basis, we’re going to add some unit 
+tests.  
+Repository Tests 
+1  Add dependencies: 
+ 
+ 
+Note – the spring-boot-starter-test dependency might already be present, if so, 
+skip it 
+2  Create a package in the testing folder, and add a new class: 
+ 
+
+ 
+    
+ 
+ 
+  
+ 
+Thursday, 21 May 2015
+ 
+| 2
+ 
+3  Add the following code to the class: 
+ 
+@RunWith(SpringRunner.class) is used to provide a bridge between Spring Boot 
+test features and JUnit. Whenever we are using any Spring Boot testing features 
+in out JUnit tests, this annotation will be required. 
+@DataJpaTest provides some standard setup needed for testing the persistence 
+layer: 
+ configuring H2, an in-memory database 
+ setting Hibernate, Spring Data, and the DataSource 
+ performing an @EntityScan 
+ turning on SQL logging 
+
+ 
+    
+ 
+ 
+  
+ 
+Thursday, 21 May 2015
+ 
+| 3
+ 
+4  Next we add the test: 
+ 
+You’ll also notice a few extras added here due to some bug fixes. 
+The MySpringBootDataModel constructor is new, you will have to create that 
+yourself in the class. As well as creating a default no-argument constructor. 
+Error warning – it is possible you might get an error mentioning you using a jre 
+rather than a jdk, that’s a simple fix in the runtime environment section of eclipse. 
+The test itself is rather simple. We create an example data model (A person in our 
+case). We then persist this to our entity manager (An in-memory database) and 
+check whether the findByID method is able to pick it up. The findByID method 
+being built in to the JPARepository that ours extends. 
+SOLO TASK – 
+ With this knowledge in mind. In your repository interface, create a method to find a 
+person by their name. Once created, write a unit test for this feature. 
+ 
+
+ 
+    
+ 
+ 
+  
+ 
+Thursday, 21 May 2015
+ 
+| 4
+ 
+Integration testing 
+1  Make a new package and class
+ 
+2  Add the code: 
+ 
+The @SpringBootTest annotation can be used when we need to bootstrap the 
+entire container. The annotation works by creating the ApplicationContext that 
+will be utilized in our tests. 
+ 
+
+ 
+    
+ 
+ 
+  
+ 
+Thursday, 21 May 2015
+ 
+| 5
+ 
+3  Add some Fields
+ 
+The MockMvc will be used to mimic sending http requests to our controller. 
+ 
+4  Let’s write a @Before method
+ 
+So before each test, we’re going to clear the repository. As it helps to stop tests 
+from interacting and leaves us a clean test environment. 
+This will be removing information from your database, so be careful when using it 
+on a live environment.  
+We could also use a mock h2 database for this, well talk about that later. 
+Now we can write a test: 
+ 
+We’re manually saving a person to the repository first. 
+Then the Mvc.perform builder is called. By-line breakdown following: 
+  Send a get request to /api/person 
+  With JSON Content Type 
+  We expect the status to be ok (200)   -.andExpect() functions similarly 
+to an assert, the test will fail if it returns false.  
+
+ 
+    
+ 
+ 
+  
+ 
+Thursday, 21 May 2015
+ 
+| 6
+ 
+ Expect that the content sent back is compatible with json  
+ And we expect that the item at position [0] in the json object has the 
+name Dale 
+If you’re confused at all about how jsonPath works, you can find a helpful tool 
+here: http://jsonpath.com/ 
+So we’ve successfully tested our api get request. 
+5  So now let’s test the post request
+ 
+Much of the same, the only new feature is the .content() method which takes a 
+String. We’ve done a literal JSON string here, but you should create a method that 
+converts the model to a usable JSON string. 
+So that’s the basis of integration testing. You should now be well equipped to 
+implement this in the rest of the API methods we’ve created.  
+TASKS- 
+ Implement unit tests for each of the other methods in the rest 
+controller. 
+ Switch the test database over to an h2 instance, rather than sql 
+ Implement unit tests in your own project. 
+ 

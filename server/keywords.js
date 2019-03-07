@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const keyword = require('./routes/keyword.route');
 const group = require('./routes/group.route');
+const report = require('./routes/report.route');
 const mongoose = require('mongoose');
 const http = require('http');
 const cors = require('cors');
@@ -24,6 +25,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/keywords', keyword);
 app.use('/groups', group);
+app.use('/report', report);
 
 app.listen = function(){
     console.log('Server is up and running on port number 9123');
