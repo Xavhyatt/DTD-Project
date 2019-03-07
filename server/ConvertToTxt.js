@@ -6,6 +6,10 @@ if (!fs.existsSync(folder2)){
     console.log('covertedFiles Folder Created!')
     fs.mkdirSync(folder2);
 }
+if (!fs.existsSync(folder)){
+    console.log('upload Folder Created!')
+    fs.mkdirSync(folder);
+}
 watch(folder, { recursive: true }, function (evt, name) {
     console.log('%s changed.', name);
     let filename = name.substring(folder.length-2);
