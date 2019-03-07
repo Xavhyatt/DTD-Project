@@ -87,18 +87,18 @@ function scanText(text, buzzwords, name){
     })
 
     let exactMatchFrequency = totalFrequency(definite);
-   // let jsonThreat = {
-    //    "nameOfFile": name,
-   //     "threatLevel": assignThreatLevel(boundOne, boundTwo, calculatePercentage(exactMatchFrequency, wordcount)),
-    //    "wordCount": wordcount, "numberOfThreatWordsFound": exactMatchFrequency, 
-    //    "exactMatches": definite, "partialMatches": maybe
-    //};
+    let json = {
+        "nameOfFile": name,
+        "threatLevel": assignThreatLevel(boundOne, boundTwo, calculatePercentage(exactMatchFrequency, wordcount)),
+        "wordCount": wordcount, "numberOfThreatWordsFound": exactMatchFrequency, 
+        "exactMatches": definite, "partialMatches": maybe
+    };
     
-  let json = {"nameOfFile" : name,
-	"wordCount" : wordcount, 
-	"numberOfThreatWordsFound": definite.length, 
-	"exactMatches": definite,
-	"partialMatches":maybe};
+ // let json = {"nameOfFile" : name,
+//	"wordCount" : wordcount, 
+//	"numberOfThreatWordsFound": definite.length, 
+//	"exactMatches": definite,
+//	"partialMatches":maybe};
   
   let dir = __dirname +'/reports';
   if (!fs.existsSync(dir)){
