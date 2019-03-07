@@ -1,1 +1,15 @@
-{"nameOfFile":"sample.pdf","wordCount":194,"numberOfThreatWordsFound":2,"exactMatches":[{"Word":"and","Frequency":38},{"Word":"the","Frequency":2}],"partialMatches":[{"Word":"and","Frequency":38},{"Word":"the","Frequency":2},{"Word":"this","Frequency":2},{"Word":"watching","Frequency":1}]}
+{
+  "nameOfFile": "sample.pdf",
+  "wordCount": 194,
+  "numberOfThreatWordsFound": 2,
+  "exactMatches": [
+    { "Word": "and", "Frequency": 38 },
+    { "Word": "the", "Frequency": 2 }
+  ],
+  "partialMatches": [
+    { "Word": "and", "Frequency": 38 },
+    { "Word": "the", "Frequency": 2 },
+    { "Word": "this", "Frequency": 2 },
+    { "Word": "watching", "Frequency": 1 }
+  ]
+}

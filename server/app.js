@@ -27,7 +27,6 @@ app.post("/", function(req, res) {
   });
   form.on("end", function() {
     console.log("***All Files Downloaded***");
-
     res.sendFile(__dirname + "/Uploaded.html");
   });
 });
