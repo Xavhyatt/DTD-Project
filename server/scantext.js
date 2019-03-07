@@ -108,6 +108,7 @@ function scanText(text, buzzwords, name){
       fs.mkdirSync(dir);
   }
   let fileloc = './reports/' + name.substring(0,name.length-1) + ".json";
+  let resultsLoc = '../client/src/results/results.json;
 
    fs.writeFile(fileloc, JSON.stringify(json), function (err) {
     if (err) throw err;
@@ -115,5 +116,10 @@ function scanText(text, buzzwords, name){
     let deleteconverted = './convertedFiles/' + name + 'docx'; 
     fs.unlinkSync(deleteconverted);   
 })
+	
+	 fs.writeFile(resultsLoc, JSON.stringify(json), function (err) {
+    if (err) throw err;
+    console.log('json created');
+	})
 ConvertToTxt.createDocx(fileloc , JSON.stringify(json));
 }
