@@ -2,9 +2,10 @@ let watch = require('node-watch');
 const fs = require("fs");
 const fetch = require('node-fetch');
 let ConvertToTxt = require("./ConvertToTxt.js");
-let buzzwordAPI = "http://51.137.151.100:9123/keywords/getall";
+let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+let buzzwordAPI = "http://51.137.135.156:9123/keywords/getall";
 
-let PostURL = "http://51.137.151.100:9123/reports/create";
+let PostURL = "http://51.137.135.156:9123/reports/create";
 
 let totalFrequency = require("./threatLevel/TotalFrequency");
 let assignThreatLevel = require("./threatLevel/AssignThreatLevel");
@@ -121,6 +122,8 @@ ConvertToTxt.createDocx(fileloc , JSON.stringify(json));
         if (err) throw err;
         console.log("json created");
     })
+	
+	reportRequest = new XMLHttpRequest();
 	
 	reportRequest.open('POST', PostURL, true);
 		
