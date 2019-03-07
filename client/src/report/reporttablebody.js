@@ -5,7 +5,7 @@ class ReportTableBody extends Component{
 	render(){
 		let output = this.props.data.map((results) => {
 			return(
-				<tr>
+				<tr key = {results.Word} >
 					<td>{results.Word}</td>
 					<td>{results.Frequency}</td>
 				</tr>
