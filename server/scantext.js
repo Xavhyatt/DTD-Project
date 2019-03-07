@@ -102,7 +102,7 @@ function scanText(text, buzzwords, name){
 		console.log("Report Created");
 	}
     
-  let dir = './reports';
+  let dir = __dirname +'/reports';
   if (!fs.existsSync(dir)){
       console.log('reports Folder Created!')
       fs.mkdirSync(dir);
