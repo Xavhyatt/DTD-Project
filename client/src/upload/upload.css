@@ -29,6 +29,5 @@ input[type="file"]::-webkit-file-upload-button {
   font-family: "Poppins", sans-serif;
   text-transform: none;
   -webkit-font-smoothing: antialiased;
-  -webkit-writing-mode: horizontal-tb !important;
   cursor: pointer;
 }
