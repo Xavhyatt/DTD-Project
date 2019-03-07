@@ -3,11 +3,11 @@ import React, { Component } from "react";
 
 class ReportTableBody extends Component{
 	render(){
-		let output = this.props.data.map((results) => {
+		let output = this.props.data.map((wordys) => {
 			return(
 				<tr>
-					<td>{results.Word}</td>
-					<td>{results.Frequency}</td>
+					<td>{wordys.Word}</td>
+					<td>{wordys.Frequency}</td>
 				</tr>
 					);
 			});
