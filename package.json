@@ -1,5 +1,5 @@
 {
-  "name": "DTD-Project-Server",
+  "name": "dtd-project-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,8 +8,8 @@
     "client": "cd client && npm start",
     "server": "cd server && npm run start",
     "startscanner": "cd server && node scantext.js",
-    "startconvert" : "cd server && node ConvertToTxt.js",
-    "startkeywords" : "cd server && node keywords.js", 
+    "startconvert": "cd server && node ConvertToTxt.js",
+    "startkeywords": "cd server && node keywords.js",
     "start": "concurrently \" npm run server\" \" npm run client\" \" npm run startscanner\" \" npm run startconvert\"  \" npm run startkeywords\" ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,17 +17,27 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chart.js": "^2.7.3",
+    "classnames": "^2.2.6",
     "concurrently": "^4.1.0",
     "cors": "2.8.5",
     "docx": "4.7.1",
+    "history": "^4.7.2",
     "mongodb": "^3.1.13",
     "mongoose": "^5.4.15",
+    "node-sass": "^4.11.0",
     "node-watch": "^0.6.0",
+    "perfect-scrollbar": "^1.4.0",
     "react": "^16.8.3",
+    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5",
+    "react-notification-alert": "0.0.9",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.8",
+    "reactstrap": "^7.1.0",
     "typescript": "^3.3.3333",
     "victory": "^31.3.0",
-    "xlsx": "^0.14.1"
+    "xlsx": "^0.14.1",
+    "xmlhttprequest": "^1.8.0"
   }
 }
