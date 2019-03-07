@@ -117,9 +117,5 @@ function scanText(text, buzzwords, name){
     fs.unlinkSync(deleteconverted);   
 })
 	
-	 fs.writeFile(resultsLoc, JSON.stringify(json), function (err) {
-    if (err) throw err;
-    console.log('json created');
-	})
 ConvertToTxt.createDocx(fileloc , JSON.stringify(json));
 }
