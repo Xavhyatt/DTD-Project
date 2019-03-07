@@ -25,6 +25,7 @@ watch(folder, { recursive: true }, function (evt, name) {
 
         if (name.endsWith(".docx")) {
             createDocx(txtfile, name)
+			fs.unlinkSync(name);
         }
 
     }
@@ -73,7 +74,6 @@ function createDocx(txtfile,text){
             fs.writeFileSync((txtfile.substring(0,txtfile.length-5)+".docx"), buffer)   
         }    
 })
-    fs.unlinkSync(name);
 }
 
 module.exports = {createDocx}

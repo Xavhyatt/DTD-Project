@@ -2,9 +2,9 @@ let watch = require('node-watch');
 const fs = require("fs");
 const fetch = require('node-fetch');
 let ConvertToTxt = require("./ConvertToTxt.js");
-let buzzwordAPI = "http://51.137.151.100:9123/keywords/getall";
+let buzzwordAPI = "http://51.137.135.156:9123/keywords/getall";
 
-let PostURL = "http://51.137.151.100:9123/reports/create";
+let PostURL = "http://51.137.135.156:9123/reports/create";
 
 let totalFrequency = require("./threatLevel/TotalFrequency");
 let assignThreatLevel = require("./threatLevel/AssignThreatLevel");
@@ -87,18 +87,19 @@ function scanText(text, buzzwords, name){
     })
 
     let exactMatchFrequency = totalFrequency(definite);
-    let json = {
-        "nameOfFile": name,
-        "threatLevel": assignThreatLevel(boundOne, boundTwo, calculatePercentage(exactMatchFrequency, wordcount)),
-        "wordCount": wordcount, "numberOfThreatWordsFound": exactMatchFrequency, 
-        "exactMatches": definite, "partialMatches": maybe
-    };
-    console.log(json);
+   // let jsonThreat = {
+    //    "nameOfFile": name,
+   //     "threatLevel": assignThreatLevel(boundOne, boundTwo, calculatePercentage(exactMatchFrequency, wordcount)),
+    //    "wordCount": wordcount, "numberOfThreatWordsFound": exactMatchFrequency, 
+    //    "exactMatches": definite, "partialMatches": maybe
+    //};
     
   let json = {"nameOfFile" : name,
-  "wordCount" : wordcount, "numberOfThreatWordsFound": definite.length, "exactMatches": definite,
-  "partialMatches":maybe};
-  console.log(json);
+	"wordCount" : wordcount, 
+	"numberOfThreatWordsFound": definite.length, 
+	"exactMatches": definite,
+	"partialMatches":maybe};
+  
   let dir = __dirname +'/reports';
   if (!fs.existsSync(dir)){
       console.log('reports Folder Created!')
@@ -121,20 +122,13 @@ ConvertToTxt.createDocx(fileloc , JSON.stringify(json));
         console.log("json created");
     })
 	
-	let reportRequest = new XMLHttpRequest();
-		let jsonReport = {"nameOfFile" : name,
- 		"wordCount" : wordcount,
-		"numberOfThreatWordsFound": definite.length, 
-		"exactMatches": definite,
- 		"partialMatches":maybe
-	};
 	reportRequest.open('POST', PostURL, true);
 		
 	reportRequest.setRequestHeader('Content-Type', 'application/json');   
 		
 	reportRequest.responseType = 'json';
 		
-	reportRequest.send(JSON.stringify(jsonReport));
+	reportRequest.send(JSON.stringify(json));
 
 	reportRequest.onload = function(){
 		console.log("Report Created");
