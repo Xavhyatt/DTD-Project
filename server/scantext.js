@@ -1,6 +1,7 @@
-var watch = require('node-watch');
+let watch = require('node-watch');
 const fs = require("fs");
 const fetch = require('node-fetch');
+let ConvertToTxt = require("./ConvertToTxt.js");
 let buzzwordAPI = "http://51.137.151.100:9123/keywords/getall";
 
 let totalFrequency = require("./threatLevel/TotalFrequency");
@@ -10,7 +11,8 @@ let boundOne = 2;
 let boundTwo = 4;
 
 
-const request = async (data, name) => {
+const request = async (data,name) => {
+
     fetch(buzzwordAPI)
         .then(response => response.text())
         .then(words =>
@@ -22,25 +24,24 @@ const request = async (data, name) => {
 
 }
 
-var folder = './convertedFiles/';
+let folder = './convertedFiles/';
 watch(folder, { recursive: true }, function (evt, name) {
     if (evt == 'update') {
-        fs.readFile(name, 'utf8', function (err, data) {
-            if (err) throw err;
-            console.log('OK: ' + name);
-
-            let filename = name.substring(folder.length - 2, name.length - 4);
-
-            request(data, filename);
-
-        })
-    }
+    fs.readFile(name, 'utf8', function(err, data) {
+        if (err) throw err;
+        console.log('OK: ' + name);
+        let filename = name.substring(folder.length-2,name.length-4);
+      
+        request(data, filename);
+        
+    })
+}
 
 })
 
-function scanText(text, buzzwords, name) {
-
-    let taglessText = text.replace(/<(?:.|\n)*?>/gm, ' ');
+function scanText(text, buzzwords, name){
+    let taglessText = text.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, ' ');
+ 
     let wordArray = taglessText.split(" ");
     let wordcount = 0;
     wordArray.forEach(function (ele) {
@@ -49,8 +50,9 @@ function scanText(text, buzzwords, name) {
         }
     })
     let lowerText = taglessText.toLowerCase();
-    var wordcnt = lowerText.replace(/[^\w\s]/g, "").split(/\s+/).reduce(function (map, word) {
-        map[word] = (map[word] || 0) + 1;
+    let wordcnt = lowerText.replace(/[^\w\s]/g, "").split(/\s+/).reduce(function(map, word){
+        map[word] = (map[word]||0)+1;
+
         return map;
     }, Object.create(null));
 
@@ -91,12 +93,29 @@ function scanText(text, buzzwords, name) {
     };
     console.log(json);
 
-    let fileloc = '../client/src/results/result.json'
+  let json = {"nameOfFile" : name,
+  "wordCount" : wordcount, "numberOfThreatWordsFound": definite.length, "exactMatches": definite,
+  "partialMatches":maybe};
+  console.log(json);
+  let dir = __dirname +'/reports';
+  if (!fs.existsSync(dir)){
+      console.log('reports Folder Created!')
+      fs.mkdirSync(dir);
+  }
+  let fileloc = './reports/' + name.substring(0,name.length-1) + ".json";
+
+   fs.writeFile(fileloc, JSON.stringify(json), function (err) {
+    if (err) throw err;
+    console.log('json created');
+    let deleteconverted = './convertedFiles/' + name + 'docx'; 
+    fs.unlinkSync(deleteconverted);   
+})
+ConvertToTxt.createDocx(fileloc , JSON.stringify(json));
+    let resultsLoc = '../client/src/results/result.json';
 
 
-    fs.writeFile(fileloc, JSON.stringify(json), function (err) {
+    fs.writeFile(resultsLoc, JSON.stringify(json), function (err) {
         if (err) throw err;
         console.log("json created");
     })
 }
-
